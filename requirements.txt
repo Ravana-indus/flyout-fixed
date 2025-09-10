@@ -1,2 +1,3 @@
 # Frappe dependencies are managed by bench
 # Add any additional Python dependencies here if needed
+

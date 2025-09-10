@@ -4,7 +4,7 @@ app_publisher = "Ravana Industries Group"
 app_description = "Sri Lanka's Migration Hub"
 app_email = "it@ravanaindustries.com"
 app_license = "agpl-3.0"
-app_version = "0.0.3"
+app_version = "0.0.4"
 
 # Required for installation
 required_apps = ["frappe"]

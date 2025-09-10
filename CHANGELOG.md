@@ -5,6 +5,22 @@ All notable changes to the Flyout app will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.4] - 2025-09-10
+
+### Fixed
+- **Doctype Permissions**: Fixed read-only issue by adding proper permissions to all 31 main doctypes
+  - Added System Manager, Administrator, and Client role permissions
+  - Client-related doctypes now have specific Client role permissions
+  - Standard doctypes have appropriate role-based access control
+- **User Access**: Doctypes are no longer read-only and can be properly accessed and modified
+- **Role-Based Security**: Implemented proper permission structure for different user roles
+
+### Technical
+- Automated permission fixing script processed all 61 doctypes
+- Child tables (30) correctly maintained empty permissions
+- Main doctypes (31) now have comprehensive role-based permissions
+- Client portal functionality now fully accessible to appropriate roles
+
 ## [0.0.3] - 2025-09-10
 
 ### Added

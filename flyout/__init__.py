@@ -1,4 +1,4 @@
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 
 # Required for Frappe app identification
 app_name = "flyout"

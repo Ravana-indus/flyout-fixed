@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Applicationold(Document):
+class Wizard(Document):
 	pass

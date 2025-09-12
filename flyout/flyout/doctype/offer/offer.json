@@ -125,13 +125,16 @@
    "reqd": 1
   },
   {
+   "fetch_from": "client.full_name",
    "fieldname": "client_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Client Name",
+   "options": "Full Name",
    "reqd": 1
   },
   {
+   "fetch_from": "client.email",
    "fieldname": "client_email",
    "fieldtype": "Data",
    "label": "Client Email",
@@ -206,8 +209,7 @@
   {
    "fieldname": "subtotal",
    "fieldtype": "Currency",
-   "label": "Subtotal",
-   "read_only": 1
+   "label": "Subtotal"
   },
   {
    "fieldname": "col_break_pricing",
@@ -221,8 +223,7 @@
   {
    "fieldname": "discount_amount",
    "fieldtype": "Currency",
-   "label": "Discount Amount",
-   "read_only": 1
+   "label": "Discount Amount"
   },
   {
    "fieldname": "col_break_pricing2",
@@ -237,7 +238,6 @@
    "fieldname": "total_amount",
    "fieldtype": "Currency",
    "label": "Total Amount",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -434,7 +434,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-09 16:53:42.433805",
+ "modified": "2025-09-11 14:59:03.930766",
  "modified_by": "Administrator",
  "module": "Flyout",
  "name": "Offer",
@@ -465,13 +465,9 @@
   },
   {
    "create": 1,
-   "delete": 0,
-   "email": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "role": "Client",
-   "share": 0,
    "write": 1
   }
  ],

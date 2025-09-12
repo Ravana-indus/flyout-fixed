@@ -302,9 +302,8 @@
   },
   {
    "fieldname": "customer",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Customer",
-   "options": "Customer",
    "read_only": 1
   },
   {
@@ -355,7 +354,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-10 16:49:33.117221",
+ "modified": "2025-09-12 01:39:28.720770",
  "modified_by": "Administrator",
  "module": "Flyout",
  "name": "Client Profile",
@@ -385,13 +384,9 @@
   },
   {
    "create": 1,
-   "delete": 0,
-   "email": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "role": "Client",
-   "share": 0,
    "write": 1
   }
  ],

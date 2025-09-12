@@ -60,7 +60,8 @@
   {
    "fieldname": "phone",
    "fieldtype": "Data",
-   "label": "Phone"
+   "label": "Phone",
+   "reqd": 1
   },
   {
    "fieldname": "company_name",
@@ -104,9 +105,11 @@
    "label": "City"
   },
   {
+   "fetch_from": "preferred_language.country_code",
    "fieldname": "timezone",
    "fieldtype": "Data",
-   "label": "Timezone"
+   "label": "Timezone",
+   "options": "Country Code"
   },
   {
    "fieldname": "profile_image_url",
@@ -166,9 +169,8 @@
   },
   {
    "fieldname": "preferred_language",
-   "fieldtype": "Link",
-   "label": "Preferred Language",
-   "options": "Language Master"
+   "fieldtype": "Data",
+   "label": "Preferred Language"
   },
   {
    "fieldname": "preferred_currency",
@@ -224,7 +226,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-09 16:52:56.708586",
+ "modified": "2025-09-11 18:26:00.186825",
  "modified_by": "Administrator",
  "module": "Flyout",
  "name": "Client",
@@ -255,13 +257,9 @@
   },
   {
    "create": 1,
-   "delete": 0,
-   "email": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "role": "Client",
-   "share": 0,
    "write": 1
   }
  ],

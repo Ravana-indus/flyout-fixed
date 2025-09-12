@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:APP-{client_name}-{####}",
+ "autoname": "format:APP-{client_name}-{provider}-{####}",
  "creation": "2025-09-09 13:41:37.104734",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -101,13 +101,16 @@
    "reqd": 1
   },
   {
+   "fetch_from": "client_id.full_name",
    "fieldname": "client_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Client Name",
+   "options": "Full Name",
    "reqd": 1
   },
   {
+   "fetch_from": "client_id.email",
    "fieldname": "client_email",
    "fieldtype": "Data",
    "label": "Client Email",
@@ -489,12 +492,12 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2025-09-09 16:53:43.064963",
+ "modified": "2025-09-12 03:26:36.615645",
  "modified_by": "Administrator",
  "module": "Flyout",
  "name": "Application",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -521,13 +524,9 @@
   },
   {
    "create": 1,
-   "delete": 0,
-   "email": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "role": "Client",
-   "share": 0,
    "write": 1
   }
  ],

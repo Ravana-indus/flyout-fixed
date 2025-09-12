@@ -1,13 +1,12 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:supabase_id",
+ "autoname": "field:title",
  "creation": "2025-09-02 21:02:39.083723",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "supabase_id",
   "title",
   "description",
   "status",
@@ -31,19 +30,12 @@
  ],
  "fields": [
   {
-   "fieldname": "supabase_id",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Supabase ID",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
    "fieldname": "title",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Title",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "description",
@@ -74,7 +66,7 @@
    "fieldname": "assigned_to",
    "fieldtype": "Link",
    "label": "Assigned To",
-   "options": "Team Member"
+   "options": "User"
   },
   {
    "fieldname": "parent_task",
@@ -151,10 +143,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-09 16:52:56.818868",
+ "modified": "2025-09-11 12:07:50.351983",
  "modified_by": "Administrator",
  "module": "Flyout",
  "name": "Tasks",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -180,15 +173,10 @@
    "write": 1
   },
   {
-   "create": 0,
-   "delete": 0,
-   "email": 0,
    "export": 1,
    "print": 1,
    "read": 1,
-   "role": "All",
-   "share": 0,
-   "write": 0
+   "role": "All"
   }
  ],
  "row_format": "Dynamic",

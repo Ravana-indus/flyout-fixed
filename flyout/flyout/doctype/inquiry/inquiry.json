@@ -63,13 +63,16 @@
    "reqd": 1
   },
   {
+   "fetch_from": "client_id.full_name",
    "fieldname": "client_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Client Name",
+   "options": "Full Name",
    "reqd": 1
   },
   {
+   "fetch_from": "client_id.email",
    "fieldname": "client_email",
    "fieldtype": "Data",
    "label": "Client Email",
@@ -282,7 +285,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-09 16:52:53.283684",
+ "modified": "2025-09-12 00:14:44.911711",
  "modified_by": "Administrator",
  "module": "Flyout",
  "name": "Inquiry",
@@ -313,13 +316,21 @@
   },
   {
    "create": 1,
-   "delete": 0,
-   "email": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "role": "Client",
-   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1,
    "write": 1
   }
  ],

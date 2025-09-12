@@ -1,35 +1,18 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "format:DOC-{document_name}-{####}",
  "creation": "2025-09-09 11:22:55.607117",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "naming_series",
-  "supabase_id",
   "application_id",
   "task_id",
   "document_name",
   "verified_by"
  ],
  "fields": [
-  {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Naming Series",
-   "options": "DOC-.#####",
-   "reqd": 1
-  },
-  {
-   "fieldname": "supabase_id",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Supabase ID",
-   "unique": 1
-  },
   {
    "fieldname": "application_id",
    "fieldtype": "Link",
@@ -55,16 +38,17 @@
    "fieldname": "verified_by",
    "fieldtype": "Link",
    "label": "Verified By",
-   "options": "Team Member"
+   "options": "User"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-09 16:52:56.516086",
+ "modified": "2025-09-11 13:44:42.493511",
  "modified_by": "Administrator",
  "module": "Flyout",
  "name": "Document Updated",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -90,15 +74,10 @@
    "write": 1
   },
   {
-   "create": 0,
-   "delete": 0,
-   "email": 0,
    "export": 1,
    "print": 1,
    "read": 1,
-   "role": "All",
-   "share": 0,
-   "write": 0
+   "role": "All"
   }
  ],
  "row_format": "Dynamic",

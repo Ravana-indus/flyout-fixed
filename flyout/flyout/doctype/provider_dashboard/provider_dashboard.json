@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:provider",
+ "creation": "2025-09-12 03:30:20.617913",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "provider",
+  "inquiries_section",
+  "inquiries_html",
+  "applications_section",
+  "applications_html",
+  "agreements_section",
+  "agreements_html",
+  "offers_section",
+  "offers_html",
+  "communications_section",
+  "communications_html"
+ ],
+ "fields": [
+  {
+   "fieldname": "provider",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Provider",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "inquiries_section",
+   "fieldtype": "Section Break",
+   "label": "Inquiries"
+  },
+  {
+   "fieldname": "inquiries_html",
+   "fieldtype": "HTML",
+   "label": "Inquiries HTML"
+  },
+  {
+   "fieldname": "applications_section",
+   "fieldtype": "Section Break",
+   "label": "Applications"
+  },
+  {
+   "fieldname": "applications_html",
+   "fieldtype": "HTML",
+   "label": "Applications HTML"
+  },
+  {
+   "fieldname": "agreements_section",
+   "fieldtype": "Section Break",
+   "label": "Agreements"
+  },
+  {
+   "fieldname": "agreements_html",
+   "fieldtype": "HTML",
+   "label": "Agreements HTML"
+  },
+  {
+   "fieldname": "offers_section",
+   "fieldtype": "Section Break",
+   "label": "Offers"
+  },
+  {
+   "fieldname": "offers_html",
+   "fieldtype": "HTML",
+   "label": "Offers HTML"
+  },
+  {
+   "fieldname": "communications_section",
+   "fieldtype": "Section Break",
+   "label": "Communications"
+  },
+  {
+   "fieldname": "communications_html",
+   "fieldtype": "HTML",
+   "label": "Communications HTML"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-20 12:20:22.269754",
+ "modified_by": "Administrator",
+ "module": "Flyout",
+ "name": "Provider Dashboard",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "provider",
+ "track_changes": 1
+}

@@ -1,0 +1,369 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:UA-{application}-{university}-{course}",
+ "creation": "2025-09-12 14:01:51.291246",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "application",
+  "provider",
+  "client",
+  "provider_course",
+  "university",
+  "course",
+  "service_fee",
+  "status",
+  "section_break_timeline",
+  "application_deadline",
+  "application_submitted_date",
+  "column_break_timeline",
+  "response_expected_date",
+  "offer_received_date",
+  "section_break_tracking",
+  "university_application_id",
+  "university_portal_url",
+  "column_break_tracking",
+  "portal_username",
+  "portal_password",
+  "section_break_intake",
+  "academic_year",
+  "intake_period",
+  "column_break_intake",
+  "course_duration",
+  "tuition_fees",
+  "section_break_fees",
+  "application_fee_amount",
+  "fee_payment_status",
+  "column_break_fees",
+  "fee_payment_date",
+  "payment_reference",
+  "section_break_offer",
+  "offer_type",
+  "offer_conditions",
+  "column_break_offer",
+  "scholarship_offered",
+  "scholarship_amount",
+  "offer_letter_attachment",
+  "section_break_staff",
+  "assigned_staff",
+  "progress_percentage",
+  "column_break_staff",
+  "current_stage",
+  "priority",
+  "section_break_notes",
+  "internal_notes",
+  "next_action",
+  "document_checklist"
+ ],
+ "fields": [
+  {
+   "fieldname": "application",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Application",
+   "options": "Application",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "application.provider",
+   "fieldname": "provider",
+   "fieldtype": "Link",
+   "label": "Provider",
+   "options": "Provider"
+  },
+  {
+   "fetch_from": "application.client_id",
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Client",
+   "read_only": 1
+  },
+  {
+   "fieldname": "provider_course",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Provider Course",
+   "options": "Provider Course",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "provider_course.university",
+   "fieldname": "university",
+   "fieldtype": "Link",
+   "label": "University",
+   "options": "University",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "provider_course.course",
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Course",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "provider_course.service_fee",
+   "fieldname": "service_fee",
+   "fieldtype": "Currency",
+   "label": "Service Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nApplied\nOffer Received\nOffer Rejected\nClosed"
+  },
+  {
+   "fieldname": "section_break_timeline",
+   "fieldtype": "Section Break",
+   "label": "Application Timeline"
+  },
+  {
+   "fieldname": "application_deadline",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Application Deadline"
+  },
+  {
+   "fieldname": "application_submitted_date",
+   "fieldtype": "Date",
+   "label": "Application Submitted Date"
+  },
+  {
+   "fieldname": "column_break_timeline",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "response_expected_date",
+   "fieldtype": "Date",
+   "label": "Response Expected Date"
+  },
+  {
+   "fieldname": "offer_received_date",
+   "fieldtype": "Date",
+   "label": "Offer Received Date"
+  },
+  {
+   "fieldname": "section_break_tracking",
+   "fieldtype": "Section Break",
+   "label": "Application Tracking"
+  },
+  {
+   "description": "Official application ID from university system",
+   "fieldname": "university_application_id",
+   "fieldtype": "Data",
+   "label": "University Application ID"
+  },
+  {
+   "fieldname": "university_portal_url",
+   "fieldtype": "Data",
+   "label": "University Portal URL",
+   "options": "URL"
+  },
+  {
+   "fieldname": "column_break_tracking",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "portal_username",
+   "fieldtype": "Data",
+   "label": "Portal Username"
+  },
+  {
+   "fieldname": "portal_password",
+   "fieldtype": "Password",
+   "label": "Portal Password"
+  },
+  {
+   "fieldname": "section_break_intake",
+   "fieldtype": "Section Break",
+   "label": "Intake & Academic Details"
+  },
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Academic Year"
+  },
+  {
+   "fieldname": "intake_period",
+   "fieldtype": "Select",
+   "label": "Intake Period",
+   "options": "Fall\nSpring\nSummer\nWinter"
+  },
+  {
+   "fieldname": "column_break_intake",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "e.g., 3 Years, 2 Years",
+   "fieldname": "course_duration",
+   "fieldtype": "Data",
+   "label": "Course Duration"
+  },
+  {
+   "description": "Annual tuition fees",
+   "fieldname": "tuition_fees",
+   "fieldtype": "Currency",
+   "label": "Tuition Fees"
+  },
+  {
+   "fieldname": "section_break_fees",
+   "fieldtype": "Section Break",
+   "label": "Application Fees & Payment"
+  },
+  {
+   "fieldname": "application_fee_amount",
+   "fieldtype": "Currency",
+   "label": "Application Fee Amount"
+  },
+  {
+   "fieldname": "fee_payment_status",
+   "fieldtype": "Select",
+   "label": "Fee Payment Status",
+   "options": "Not Required\nPending\nPaid\nRefunded"
+  },
+  {
+   "fieldname": "column_break_fees",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fee_payment_date",
+   "fieldtype": "Date",
+   "label": "Fee Payment Date"
+  },
+  {
+   "description": "Transaction ID or reference number",
+   "fieldname": "payment_reference",
+   "fieldtype": "Data",
+   "label": "Payment Reference"
+  },
+  {
+   "fieldname": "section_break_offer",
+   "fieldtype": "Section Break",
+   "label": "Offer Details"
+  },
+  {
+   "fieldname": "offer_type",
+   "fieldtype": "Select",
+   "label": "Offer Type",
+   "options": "No Offer\nUnconditional Offer\nConditional Offer\nRejected"
+  },
+  {
+   "fieldname": "offer_conditions",
+   "fieldtype": "Text Editor",
+   "label": "Offer Conditions"
+  },
+  {
+   "fieldname": "column_break_offer",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "scholarship_offered",
+   "fieldtype": "Check",
+   "label": "Scholarship Offered"
+  },
+  {
+   "depends_on": "scholarship_offered",
+   "fieldname": "scholarship_amount",
+   "fieldtype": "Currency",
+   "label": "Scholarship Amount"
+  },
+  {
+   "fieldname": "offer_letter_attachment",
+   "fieldtype": "Attach",
+   "label": "Offer Letter Attachment"
+  },
+  {
+   "fieldname": "section_break_staff",
+   "fieldtype": "Section Break",
+   "label": "Staff Assignment & Progress"
+  },
+  {
+   "fieldname": "assigned_staff",
+   "fieldtype": "Link",
+   "label": "Assigned Staff",
+   "options": "User"
+  },
+  {
+   "description": "Auto-calculated based on completed tasks",
+   "fieldname": "progress_percentage",
+   "fieldtype": "Percent",
+   "label": "Progress (%)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_staff",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "current_stage",
+   "fieldtype": "Select",
+   "label": "Current Stage",
+   "options": "Document Collection\nApplication Preparation\nApplication Submission\nUniversity Review\nInterview Stage\nDecision Received\nOffer Processing\nCompleted"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nUrgent"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_notes",
+   "fieldtype": "Section Break",
+   "label": "Internal Notes & Communication"
+  },
+  {
+   "description": "Internal notes for staff use only",
+   "fieldname": "internal_notes",
+   "fieldtype": "Text Editor",
+   "label": "Internal Notes"
+  },
+  {
+   "description": "What needs to be done next",
+   "fieldname": "next_action",
+   "fieldtype": "Text",
+   "label": "Next Action Required"
+  },
+  {
+   "fieldname": "document_checklist",
+   "fieldtype": "Table",
+   "label": "Document Checklist",
+   "options": "University Application Document"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-20 12:18:45.034950",
+ "modified_by": "Administrator",
+ "module": "Flyout",
+ "name": "University Application",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

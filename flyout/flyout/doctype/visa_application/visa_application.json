@@ -1,0 +1,398 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:VA-{university_application}-{visa_type}-{destination_country}",
+ "creation": "2025-09-13 01:23:25.518891",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "university_application",
+  "application",
+  "client",
+  "provider",
+  "university",
+  "course",
+  "section_break_visa_details",
+  "visa_type",
+  "destination_country",
+  "column_break_visa",
+  "visa_category",
+  "intended_duration",
+  "section_break_timeline",
+  "application_submission_date",
+  "biometrics_appointment_date",
+  "interview_date",
+  "column_break_timeline",
+  "decision_expected_date",
+  "decision_received_date",
+  "visa_expiry_date",
+  "section_break_tracking",
+  "visa_application_number",
+  "embassy_consulate",
+  "column_break_tracking",
+  "tracking_url",
+  "passport_number",
+  "section_break_fees",
+  "visa_fee_amount",
+  "service_fee",
+  "other_fees",
+  "column_break_fees",
+  "total_amount",
+  "payment_status",
+  "payment_reference",
+  "section_break_status",
+  "status",
+  "current_stage",
+  "column_break_status",
+  "progress_percentage",
+  "priority",
+  "assigned_staff",
+  "section_break_decision",
+  "decision_type",
+  "visa_number",
+  "visa_issue_date",
+  "column_break_decision",
+  "rejection_reason",
+  "visa_conditions",
+  "visa_attachment",
+  "section_break_notes",
+  "internal_notes",
+  "next_action",
+  "document_checklist"
+ ],
+ "fields": [
+  {
+   "fieldname": "university_application",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "University Application",
+   "options": "University Application",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "university_application.application",
+   "fieldname": "application",
+   "fieldtype": "Link",
+   "label": "Application",
+   "options": "Application",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "university_application.client",
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Client",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "university_application.provider",
+   "fieldname": "provider",
+   "fieldtype": "Link",
+   "label": "Provider",
+   "options": "Provider",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "university_application.university",
+   "fieldname": "university",
+   "fieldtype": "Link",
+   "label": "University",
+   "options": "University",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "university_application.course",
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Course",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_visa_details",
+   "fieldtype": "Section Break",
+   "label": "Visa Details"
+  },
+  {
+   "fieldname": "visa_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Visa Type",
+   "options": "Student Visa\nWork Visa\nTourist Visa\nBusiness Visa\nTransit Visa\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "destination_country",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Destination Country",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_visa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "e.g., F-1, Tier 4, etc.",
+   "fieldname": "visa_category",
+   "fieldtype": "Data",
+   "label": "Visa Category"
+  },
+  {
+   "description": "e.g., 4 Years, 18 Months",
+   "fieldname": "intended_duration",
+   "fieldtype": "Data",
+   "label": "Intended Duration"
+  },
+  {
+   "fieldname": "section_break_timeline",
+   "fieldtype": "Section Break",
+   "label": "Application Timeline"
+  },
+  {
+   "fieldname": "application_submission_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Application Submission Date"
+  },
+  {
+   "fieldname": "biometrics_appointment_date",
+   "fieldtype": "Date",
+   "label": "Biometrics Appointment Date"
+  },
+  {
+   "fieldname": "interview_date",
+   "fieldtype": "Date",
+   "label": "Interview Date"
+  },
+  {
+   "fieldname": "column_break_timeline",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "decision_expected_date",
+   "fieldtype": "Date",
+   "label": "Decision Expected Date"
+  },
+  {
+   "fieldname": "decision_received_date",
+   "fieldtype": "Date",
+   "label": "Decision Received Date"
+  },
+  {
+   "fieldname": "visa_expiry_date",
+   "fieldtype": "Date",
+   "label": "Visa Expiry Date"
+  },
+  {
+   "fieldname": "section_break_tracking",
+   "fieldtype": "Section Break",
+   "label": "Application Tracking"
+  },
+  {
+   "description": "Official application reference number",
+   "fieldname": "visa_application_number",
+   "fieldtype": "Data",
+   "label": "Visa Application Number"
+  },
+  {
+   "description": "Processing location",
+   "fieldname": "embassy_consulate",
+   "fieldtype": "Data",
+   "label": "Embassy/Consulate"
+  },
+  {
+   "fieldname": "column_break_tracking",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tracking_url",
+   "fieldtype": "Data",
+   "label": "Tracking URL",
+   "options": "URL"
+  },
+  {
+   "description": "Passport used for application",
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "label": "Passport Number"
+  },
+  {
+   "fieldname": "section_break_fees",
+   "fieldtype": "Section Break",
+   "label": "Visa Fees & Payments"
+  },
+  {
+   "fieldname": "visa_fee_amount",
+   "fieldtype": "Currency",
+   "label": "Visa Fee Amount"
+  },
+  {
+   "fieldname": "service_fee",
+   "fieldtype": "Currency",
+   "label": "Service Fee"
+  },
+  {
+   "description": "Biometrics, courier, etc.",
+   "fieldname": "other_fees",
+   "fieldtype": "Currency",
+   "label": "Other Fees"
+  },
+  {
+   "fieldname": "column_break_fees",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "Pending\nPartially Paid\nFully Paid\nRefunded"
+  },
+  {
+   "fieldname": "payment_reference",
+   "fieldtype": "Data",
+   "label": "Payment Reference"
+  },
+  {
+   "fieldname": "section_break_status",
+   "fieldtype": "Section Break",
+   "label": "Application Status & Progress"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nDocument Collection\nSubmitted\nBiometrics Completed\nInterview Scheduled\nUnder Review\nApproved\nRejected\nVisa Issued\nVisa Collected\nClosed"
+  },
+  {
+   "fieldname": "current_stage",
+   "fieldtype": "Select",
+   "label": "Current Stage",
+   "options": "Document Preparation\nApplication Submission\nBiometrics\nInterview\nDecision Awaiting\nVisa Processing\nVisa Collection\nCompleted"
+  },
+  {
+   "fieldname": "column_break_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Auto-calculated based on completed documents and stages",
+   "fieldname": "progress_percentage",
+   "fieldtype": "Percent",
+   "label": "Progress (%)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nUrgent"
+  },
+  {
+   "fieldname": "assigned_staff",
+   "fieldtype": "Link",
+   "label": "Assigned Staff",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_break_decision",
+   "fieldtype": "Section Break",
+   "label": "Visa Decision & Details"
+  },
+  {
+   "fieldname": "decision_type",
+   "fieldtype": "Select",
+   "label": "Decision Type",
+   "options": "Pending\nApproved\nRejected\nAdditional Documents Required"
+  },
+  {
+   "fieldname": "visa_number",
+   "fieldtype": "Data",
+   "label": "Visa Number"
+  },
+  {
+   "fieldname": "visa_issue_date",
+   "fieldtype": "Date",
+   "label": "Visa Issue Date"
+  },
+  {
+   "fieldname": "column_break_decision",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rejection_reason",
+   "fieldtype": "Text Editor",
+   "label": "Rejection Reason"
+  },
+  {
+   "fieldname": "visa_conditions",
+   "fieldtype": "Text Editor",
+   "label": "Visa Conditions"
+  },
+  {
+   "fieldname": "visa_attachment",
+   "fieldtype": "Attach",
+   "label": "Visa Attachment"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_notes",
+   "fieldtype": "Section Break",
+   "label": "Internal Notes & Communication"
+  },
+  {
+   "description": "Internal notes for staff use only",
+   "fieldname": "internal_notes",
+   "fieldtype": "Text Editor",
+   "label": "Internal Notes"
+  },
+  {
+   "description": "What needs to be done next",
+   "fieldname": "next_action",
+   "fieldtype": "Text",
+   "label": "Next Action Required"
+  },
+  {
+   "fieldname": "document_checklist",
+   "fieldtype": "Table",
+   "label": "Document Checklist",
+   "options": "Visa Application Document"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-20 12:20:20.721085",
+ "modified_by": "Administrator",
+ "module": "Flyout",
+ "name": "Visa Application",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "university_application",
+ "track_changes": 1
+}

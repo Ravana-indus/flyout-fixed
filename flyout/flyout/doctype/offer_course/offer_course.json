@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-13 19:14:53.862674",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "provider_course",
+  "university",
+  "course",
+  "service_fee",
+  "tuition_fee",
+  "application_fee",
+  "priority",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "provider_course",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Provider Course",
+   "options": "Provider Course",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "provider_course.university",
+   "fieldname": "university",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "University",
+   "options": "University",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "provider_course.course",
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Course",
+   "options": "Course",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "provider_course.service_fee",
+   "fieldname": "service_fee",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Service Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tuition_fee",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Tuition Fee"
+  },
+  {
+   "fieldname": "application_fee",
+   "fieldtype": "Currency",
+   "label": "Application Fee"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Priority",
+   "options": "High\nMedium\nLow"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-20 12:20:20.390665",
+ "modified_by": "Administrator",
+ "module": "Flyout",
+ "name": "Offer Course",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

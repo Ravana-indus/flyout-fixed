@@ -1,0 +1,443 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:AGR-{offer}-{####}",
+ "creation": "2025-09-13 22:09:34.665916",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "agreement_title",
+  "offer",
+  "agreement_template",
+  "agreement_date",
+  "column_break_1",
+  "agreement_status",
+  "valid_until",
+  "signed_date",
+  "section_break_parties",
+  "provider",
+  "provider_name",
+  "provider_email",
+  "column_break_2",
+  "client",
+  "client_name",
+  "client_email",
+  "tab_break_services",
+  "service_type",
+  "service_description",
+  "section_break_courses",
+  "offered_courses",
+  "section_break_deliverables",
+  "deliverables",
+  "timeline",
+  "tab_break_financial",
+  "total_amount",
+  "currency",
+  "column_break_3",
+  "payment_method",
+  "payment_terms",
+  "section_break_fees",
+  "fee_breakdown",
+  "tab_break_terms",
+  "general_terms",
+  "section_break_policies",
+  "cancellation_policy",
+  "refund_policy",
+  "column_break_4",
+  "confidentiality_clause",
+  "liability_clause",
+  "tab_break_signatures",
+  "provider_signature",
+  "provider_signature_date",
+  "column_break_5",
+  "client_signature",
+  "client_signature_date",
+  "section_break_witnesses",
+  "witness_1_name",
+  "witness_1_signature",
+  "column_break_6",
+  "witness_2_name",
+  "witness_2_signature",
+  "tab_break_tracking",
+  "created_by",
+  "approved_by",
+  "column_break_7",
+  "sent_date",
+  "last_modified_by",
+  "section_break_notes",
+  "internal_notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "agreement_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Agreement Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "offer",
+   "fieldtype": "Link",
+   "label": "Source Offer",
+   "options": "Offer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "agreement_template",
+   "fieldtype": "Link",
+   "label": "Agreement Template",
+   "options": "Agreement Template"
+  },
+  {
+   "default": "Today",
+   "fieldname": "agreement_date",
+   "fieldtype": "Date",
+   "label": "Agreement Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "agreement_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Agreement Status",
+   "options": "Draft\nSent\nUnder Review\nAccepted\nRejected\nExpired"
+  },
+  {
+   "fieldname": "valid_until",
+   "fieldtype": "Date",
+   "label": "Valid Until",
+   "reqd": 1
+  },
+  {
+   "fieldname": "signed_date",
+   "fieldtype": "Date",
+   "label": "Signed Date"
+  },
+  {
+   "fieldname": "section_break_parties",
+   "fieldtype": "Section Break",
+   "label": "Agreement Parties"
+  },
+  {
+   "fieldname": "provider",
+   "fieldtype": "Link",
+   "label": "Provider",
+   "options": "Provider",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "provider.company_name",
+   "fieldname": "provider_name",
+   "fieldtype": "Data",
+   "label": "Provider Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "provider.email",
+   "fieldname": "provider_email",
+   "fieldtype": "Data",
+   "label": "Provider Email",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Client",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "client.full_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "label": "Client Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.email",
+   "fieldname": "client_email",
+   "fieldtype": "Data",
+   "label": "Client Email",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_break_services",
+   "fieldtype": "Tab Break",
+   "label": "Service Information"
+  },
+  {
+   "fieldname": "service_type",
+   "fieldtype": "Data",
+   "label": "Service Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "service_description",
+   "fieldtype": "Text Editor",
+   "label": "Service Description"
+  },
+  {
+   "fieldname": "section_break_courses",
+   "fieldtype": "Section Break",
+   "label": "Course & University Details"
+  },
+  {
+   "description": "Universities and courses included in this agreement",
+   "fieldname": "offered_courses",
+   "fieldtype": "Table",
+   "label": "Offered Courses",
+   "options": "Offer Course"
+  },
+  {
+   "fieldname": "section_break_deliverables",
+   "fieldtype": "Section Break",
+   "label": "Deliverables"
+  },
+  {
+   "description": "What will be delivered to the client",
+   "fieldname": "deliverables",
+   "fieldtype": "Text Editor",
+   "label": "Service Deliverables"
+  },
+  {
+   "description": "Expected timeline for service completion",
+   "fieldname": "timeline",
+   "fieldtype": "Text Editor",
+   "label": "Service Timeline"
+  },
+  {
+   "fieldname": "tab_break_financial",
+   "fieldtype": "Tab Break",
+   "label": "Financial Terms"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Agreement Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "Bank Transfer\nCredit Card\nPayPal\nCash\nCheck"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Text Editor",
+   "label": "Payment Terms"
+  },
+  {
+   "fieldname": "section_break_fees",
+   "fieldtype": "Section Break",
+   "label": "Fee Breakdown"
+  },
+  {
+   "description": "Detailed breakdown of all fees",
+   "fieldname": "fee_breakdown",
+   "fieldtype": "Table",
+   "label": "Fee Breakdown",
+   "options": "Offer Fee Breakdown"
+  },
+  {
+   "fieldname": "tab_break_terms",
+   "fieldtype": "Tab Break",
+   "label": "Terms & Conditions"
+  },
+  {
+   "fieldname": "general_terms",
+   "fieldtype": "Text Editor",
+   "label": "General Terms & Conditions"
+  },
+  {
+   "fieldname": "section_break_policies",
+   "fieldtype": "Section Break",
+   "label": "Policies"
+  },
+  {
+   "fieldname": "cancellation_policy",
+   "fieldtype": "Text Editor",
+   "label": "Cancellation Policy"
+  },
+  {
+   "fieldname": "refund_policy",
+   "fieldtype": "Text Editor",
+   "label": "Refund Policy"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "confidentiality_clause",
+   "fieldtype": "Text Editor",
+   "label": "Confidentiality Clause"
+  },
+  {
+   "fieldname": "liability_clause",
+   "fieldtype": "Text Editor",
+   "label": "Liability Clause"
+  },
+  {
+   "fieldname": "tab_break_signatures",
+   "fieldtype": "Tab Break",
+   "label": "Signatures"
+  },
+  {
+   "fieldname": "provider_signature",
+   "fieldtype": "Signature",
+   "label": "Provider Signature"
+  },
+  {
+   "fieldname": "provider_signature_date",
+   "fieldtype": "Date",
+   "label": "Provider Signature Date"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "client_signature",
+   "fieldtype": "Signature",
+   "label": "Client Signature"
+  },
+  {
+   "fieldname": "client_signature_date",
+   "fieldtype": "Date",
+   "label": "Client Signature Date"
+  },
+  {
+   "fieldname": "section_break_witnesses",
+   "fieldtype": "Section Break",
+   "label": "Witnesses"
+  },
+  {
+   "fieldname": "witness_1_name",
+   "fieldtype": "Data",
+   "label": "Witness 1 Name"
+  },
+  {
+   "fieldname": "witness_1_signature",
+   "fieldtype": "Signature",
+   "label": "Witness 1 Signature"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "witness_2_name",
+   "fieldtype": "Data",
+   "label": "Witness 2 Name"
+  },
+  {
+   "fieldname": "witness_2_signature",
+   "fieldtype": "Signature",
+   "label": "Witness 2 Signature"
+  },
+  {
+   "fieldname": "tab_break_tracking",
+   "fieldtype": "Tab Break",
+   "label": "Tracking"
+  },
+  {
+   "default": "user",
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "User"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sent_date",
+   "fieldtype": "Datetime",
+   "label": "Sent Date"
+  },
+  {
+   "fieldname": "last_modified_by",
+   "fieldtype": "Link",
+   "label": "Last Modified By",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_break_notes",
+   "fieldtype": "Section Break",
+   "label": "Internal Notes"
+  },
+  {
+   "description": "Private notes for internal use only",
+   "fieldname": "internal_notes",
+   "fieldtype": "Text",
+   "label": "Internal Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Agreement",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-20 12:20:19.695677",
+ "modified_by": "Administrator",
+ "module": "Flyout",
+ "name": "Agreement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -26,27 +26,32 @@
   "website",
   "summary_section",
   "total_inquiries",
+  "accepted_inquiries",
+  "total_offers_received",
+  "column_break_3",
+  "total_agreements",
   "active_applications",
   "total_providers",
-  "column_break_3",
-  "total_documents",
-  "total_communications",
+  "total_spent",
+  "success_rate",
   "last_activity",
   "inquiries_tab",
   "inquiries_section",
-  "inquiries",
+  "inquiry_history",
+  "offers_tab",
+  "offers_section",
+  "offer_history",
+  "agreements_section",
+  "agreement_history",
   "applications_tab",
   "applications_section",
-  "applications",
+  "application_history",
   "providers_tab",
   "providers_section",
-  "providers",
-  "documents_tab",
-  "documents_section",
-  "documents",
+  "preferred_providers",
   "communications_tab",
   "communications_section",
-  "communications",
+  "communication_log",
   "settings_tab",
   "portal_section",
   "portal_enabled",
@@ -80,6 +85,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "client.full_name",
    "fieldname": "client_name",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -88,11 +94,13 @@
    "unique": 1
   },
   {
+   "fetch_from": "client.email",
    "fieldname": "email",
    "fieldtype": "Data",
    "label": "Email"
   },
   {
+   "fetch_from": "client.phone",
    "fieldname": "phone",
    "fieldtype": "Data",
    "label": "Phone"
@@ -112,7 +120,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Active\nInactive\nPending\nSuspended"
+   "options": "Active\nInactive\nPending\nSuspended\nVIP\nBlocked"
   },
   {
    "fieldname": "country",
@@ -165,18 +173,21 @@
    "label": "Summary Metrics"
   },
   {
+   "default": "0",
    "fieldname": "total_inquiries",
    "fieldtype": "Int",
    "label": "Total Inquiries",
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "active_applications",
    "fieldtype": "Int",
    "label": "Active Applications",
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_providers",
    "fieldtype": "Int",
    "label": "Total Providers",
@@ -187,18 +198,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "total_documents",
-   "fieldtype": "Int",
-   "label": "Total Documents",
-   "read_only": 1
-  },
-  {
-   "fieldname": "total_communications",
-   "fieldtype": "Int",
-   "label": "Total Communications",
-   "read_only": 1
-  },
-  {
    "fieldname": "last_activity",
    "fieldtype": "Datetime",
    "label": "Last Activity",
@@ -207,18 +206,12 @@
   {
    "fieldname": "inquiries_tab",
    "fieldtype": "Tab Break",
-   "label": "Inquiries"
+   "label": "Inquiry History"
   },
   {
    "fieldname": "inquiries_section",
    "fieldtype": "Section Break",
    "label": "Client Inquiries"
-  },
-  {
-   "fieldname": "inquiries",
-   "fieldtype": "Table",
-   "label": "Inquiries",
-   "options": "Client Inquiry Summary"
   },
   {
    "fieldname": "applications_tab",
@@ -231,12 +224,6 @@
    "label": "Client Applications"
   },
   {
-   "fieldname": "applications",
-   "fieldtype": "Table",
-   "label": "Applications",
-   "options": "Client Application Summary"
-  },
-  {
    "fieldname": "providers_tab",
    "fieldtype": "Tab Break",
    "label": "Providers"
@@ -247,28 +234,6 @@
    "label": "Provider Relationships"
   },
   {
-   "fieldname": "providers",
-   "fieldtype": "Table",
-   "label": "Providers",
-   "options": "Client Provider Summary"
-  },
-  {
-   "fieldname": "documents_tab",
-   "fieldtype": "Tab Break",
-   "label": "Documents"
-  },
-  {
-   "fieldname": "documents_section",
-   "fieldtype": "Section Break",
-   "label": "Document Management"
-  },
-  {
-   "fieldname": "documents",
-   "fieldtype": "Table",
-   "label": "Documents",
-   "options": "Client Document Summary"
-  },
-  {
    "fieldname": "communications_tab",
    "fieldtype": "Tab Break",
    "label": "Communications"
@@ -277,12 +242,6 @@
    "fieldname": "communications_section",
    "fieldtype": "Section Break",
    "label": "Communication History"
-  },
-  {
-   "fieldname": "communications",
-   "fieldtype": "Table",
-   "label": "Communications",
-   "options": "Client Communication Summary"
   },
   {
    "fieldname": "settings_tab",
@@ -349,15 +308,100 @@
    "fieldtype": "Link",
    "label": "Assigned To",
    "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "accepted_inquiries",
+   "fieldtype": "Int",
+   "label": "Accepted Inquiries",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_offers_received",
+   "fieldtype": "Int",
+   "label": "Offers Received",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_agreements",
+   "fieldtype": "Int",
+   "label": "Agreements Signed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_spent",
+   "fieldtype": "Currency",
+   "label": "Total Spent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "success_rate",
+   "fieldtype": "Percent",
+   "label": "Success Rate %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "inquiry_history",
+   "fieldtype": "Table",
+   "label": "Inquiries",
+   "options": "Client Profile Inquiry"
+  },
+  {
+   "fieldname": "offers_tab",
+   "fieldtype": "Tab Break",
+   "label": "Offers & Agreements"
+  },
+  {
+   "fieldname": "offers_section",
+   "fieldtype": "Section Break",
+   "label": "Offers Received"
+  },
+  {
+   "fieldname": "offer_history",
+   "fieldtype": "Table",
+   "label": "Offers",
+   "options": "Client Profile Offer"
+  },
+  {
+   "fieldname": "agreements_section",
+   "fieldtype": "Section Break",
+   "label": "Agreements"
+  },
+  {
+   "fieldname": "agreement_history",
+   "fieldtype": "Table",
+   "label": "Agreements",
+   "options": "Client Profile Agreement"
+  },
+  {
+   "fieldname": "application_history",
+   "fieldtype": "Table",
+   "label": "Applications",
+   "options": "Client Profile Application"
+  },
+  {
+   "fieldname": "preferred_providers",
+   "fieldtype": "Table",
+   "label": "Provider Relations",
+   "options": "Client Profile Provider"
+  },
+  {
+   "fieldname": "communication_log",
+   "fieldtype": "Table",
+   "label": "Communications",
+   "options": "Client Profile Communication"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-12 01:39:28.720770",
+ "modified": "2025-09-14 00:33:31.400097",
  "modified_by": "Administrator",
  "module": "Flyout",
  "name": "Client Profile",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

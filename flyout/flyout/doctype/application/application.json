@@ -492,8 +492,17 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-09-12 03:26:36.615645",
+ "links": [
+  {
+   "link_doctype": "University Application",
+   "link_fieldname": "application"
+  },
+  {
+   "link_doctype": "Visa Application",
+   "link_fieldname": "application"
+  }
+ ],
+ "modified": "2025-09-13 01:32:49.559427",
  "modified_by": "Administrator",
  "module": "Flyout",
  "name": "Application",
@@ -533,6 +542,27 @@
  "row_format": "Dynamic",
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Open"
+  },
+  {
+   "color": "Yellow",
+   "title": "On Progress"
+  },
+  {
+   "color": "Green",
+   "title": "Completed"
+  },
+  {
+   "color": "Red",
+   "title": "Closed"
+  },
+  {
+   "color": "Gray",
+   "title": "Delayed"
+  }
+ ],
  "track_changes": 1
 }

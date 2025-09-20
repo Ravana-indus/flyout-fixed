@@ -10,6 +10,7 @@
   "offer_title",
   "tab_break_basic",
   "inquiry_reference",
+  "accepted_inquiry",
   "country",
   "service_type",
   "col_break_1",
@@ -24,6 +25,7 @@
   "priority",
   "section_break_description",
   "service_offered",
+  "course_information",
   "offer_summary",
   "detailed_description",
   "special_notes",
@@ -428,13 +430,25 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "accepted_inquiry",
+   "fieldtype": "Link",
+   "label": "Accepted inquiry",
+   "options": "Accepted Inquiries"
+  },
+  {
+   "fieldname": "course_information",
+   "fieldtype": "Table",
+   "label": "Course Information",
+   "options": "Provider Course Table"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-11 14:59:03.930766",
+ "modified": "2025-09-13 21:44:08.288662",
  "modified_by": "Administrator",
  "module": "Flyout",
  "name": "Offer",

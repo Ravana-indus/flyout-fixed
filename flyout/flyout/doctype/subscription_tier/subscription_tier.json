@@ -5,19 +5,26 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "tier"
+  "tier",
+  "sync_interval"
  ],
  "fields": [
   {
    "fieldname": "tier",
    "fieldtype": "Data",
    "label": "Tier"
+  },
+  {
+   "fieldname": "sync_interval",
+   "fieldtype": "Select",
+   "label": "Sync Interval",
+   "options": "2 Weeks\nEvery Week\nDaily\nHourly"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-10 17:59:33.180070",
+ "modified": "2025-09-14 19:31:55.897677",
  "modified_by": "Administrator",
  "module": "Flyout",
  "name": "Subscription Tier",

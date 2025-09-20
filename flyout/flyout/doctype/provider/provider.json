@@ -227,8 +227,25 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-09-11 13:48:33.293825",
+ "links": [
+  {
+   "link_doctype": "Provider Course",
+   "link_fieldname": "provider"
+  },
+  {
+   "link_doctype": "Application",
+   "link_fieldname": "provider"
+  },
+  {
+   "link_doctype": "University Application",
+   "link_fieldname": "provider"
+  },
+  {
+   "link_doctype": "Visa Application",
+   "link_fieldname": "provider"
+  }
+ ],
+ "modified": "2025-09-13 01:34:47.735964",
  "modified_by": "Administrator",
  "module": "Flyout",
  "name": "Provider",

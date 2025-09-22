@@ -9,14 +9,7 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     port: 8080,
-    proxy: {
-      "/api": {
-        target: "http://64.227.167.255", // your running Frappe backend
-        changeOrigin: true,
-        secure: false,
-      },
-    },
-    // proxy: getProxyOptions({ port: webserver_port }),
+    proxy: getProxyOptions({ port: webserver_port }),
   },
   resolve: {
     alias: {

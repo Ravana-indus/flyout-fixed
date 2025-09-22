@@ -1,16 +1,5 @@
 <template>
-  <ProviderLayout>
+  <div>
     <router-view />
-  </ProviderLayout>
+  </div>
 </template>
-
-<script>
-import ProviderLayout from './ProviderLayout.vue'
-
-export default {
-  name: 'App',
-  components: {
-    ProviderLayout
-  }
-}
-</script>

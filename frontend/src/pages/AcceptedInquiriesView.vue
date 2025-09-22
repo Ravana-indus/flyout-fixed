@@ -84,7 +84,7 @@ export default {
   },
   resources: {
     acceptedInquiries: {
-      method: 'frappe.client.get_list',
+      url: 'frappe.client.get_list',
       params: {
         doctype: 'Inquiry',
         fields: ['name', 'client_name', 'client_email', 'client_phone', 'status', 'selected_provider', 'inquiry_date', 'modified', 'priority', 'preferred_countries'],
@@ -94,20 +94,18 @@ export default {
       auto: true
     },
     convertToDeal: {
-      method: 'frappe.client.set_value',
-      params: {
-        doctype: 'Inquiry',
-        name: '',
-        fieldname: 'status',
-        value: 'Converted'
+      url: 'frappe.client.set_value',
+      makeParams(values) {
+        return {
+          doctype: 'Inquiry',
+          name: values.inquiry,
+          fieldname: 'status',
+          value: 'Converted'
+        }
       },
       onSuccess() {
         this.$resources.acceptedInquiries.fetch()
         this.convertingInquiry = null
-      },
-      onError(err) {
-        this.convertingInquiry = null
-        console.error('Error converting inquiry:', err)
       }
     }
   },
@@ -133,9 +131,7 @@ export default {
     },
     convertToDeal(inquiry) {
       this.convertingInquiry = inquiry.name
-      // Update params with the specific inquiry name
-      this.$resources.convertToDeal.params.name = inquiry.name
-      this.$resources.convertToDeal.submit()
+      this.$resources.convertToDeal.submit({ inquiry: inquiry.name })
     }
   }
 }
